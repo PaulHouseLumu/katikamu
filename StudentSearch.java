@@ -78,7 +78,7 @@ private JPanel contentPane;
 		flowLayout.setAlignment(FlowLayout.LEFT);
 		contentPane.add(panel, BorderLayout.NORTH);
 		
-		JLabel lblEnterRegistrationNumber = new JLabel("Enter student Registration Number");
+		JLabel lblEnterRegistrationNumber = new JLabel("Enter Student Reg.No:");
 		panel.add(lblEnterRegistrationNumber);
 		
 		registrationNumberTextField = new JTextField();
@@ -88,13 +88,13 @@ private JPanel contentPane;
                                                                                                                                                                 btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Get last name from the text field
+				// Get registration number from the text field
 
-				// Call DAO and get employees for the last name
+				// Call DAO and get students for the registration number
 
-				// If last name is empty, then get all employees
+				// If last name is empty, then get all students
 
-				// Print out employees				
+				// Print out students				
 				
 				try {
 					String registrationNumber = registrationNumberTextField.getText();
@@ -113,7 +113,7 @@ private JPanel contentPane;
 					table.setModel(model);
 					
 					/*
-					for (Employee temp : employees) {
+					for (Student temp : students) {
 						System.out.println(temp);
 					}
 					*/
@@ -165,4 +165,3 @@ private JPanel contentPane;
     // Variables declaration - do not modify                     
     // End of variables declaration                   
 }
-
