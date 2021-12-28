@@ -29,7 +29,7 @@ public class StudentDAO {
                 // Connect to database
                 myConn = new DButil().getConnection();
                 
-                System.out.println("DB Connection successful to: ");
+                System.out.println("DB Connection successful ");
         
     }
     
@@ -111,9 +111,9 @@ public class StudentDAO {
 	private Student convertRowToStudent(ResultSet myRs) throws SQLException {
 		
 		String registrationNumber = myRs.getString("registration_number");
-                String firstName = myRs.getString("first_name");
+		String firstName = myRs.getString("first_name");
 		String lastName = myRs.getString("last_name");
-                String gender = myRs.getString("gender");
+		String gender = myRs.getString("gender");
 		int age = myRs.getInt("age");
                 String subject = myRs.getString("subject");
                 String studentClass = myRs.getString("student_class");
