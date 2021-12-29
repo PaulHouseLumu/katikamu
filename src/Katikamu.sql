@@ -10,7 +10,7 @@ CREATE TABLE `Students` (
 	`first_name` varchar(255) NOT NULL,
 	`last_name` varchar(255) NOT NULL,
 	`gender` varchar(255) NOT NULL,
-	`registration_number` varchar(255) NOT NULL,
+	`registration_number` varchar(255) NOT NULL UNIQUE,
 	`age` INT(255) NOT NULL,
 	`email` varchar(255) NOT NULL,
 	`password` varchar(255) NOT NULL,

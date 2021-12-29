@@ -41,6 +41,11 @@ public class StudentHomeController implements User {
         }
         return status;
     }
+
+    /**
+     * Used to compute all the things need to get the timetable data
+     * @return
+     */
     public ArrayList<Timetable> viewTimetable(){
         Statement statement = null;
         ResultSet resultSet = null;
@@ -69,6 +74,10 @@ public class StudentHomeController implements User {
         return rs;
     }
 
+    /**
+     * Used to retrieve data about student performance
+     * @return
+     */
     public ArrayList<StudentResult> viewResults(){
         Statement statement = null;
         ResultSet resultSet = null;

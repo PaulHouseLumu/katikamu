@@ -20,7 +20,7 @@ public class StudentLoginView implements ActionListener {
     JLabel passwordLabel= new JLabel("Password :");
     JLabel heading = new JLabel("Students' Login");
     public StudentLoginView(){
-        heading.setBounds(170,25,200,30);
+        heading.setBounds(170,25,300,30);
         heading.setForeground(Color.blue);
         heading.setFont(new Font(null,Font.BOLD,25));
        usernameLabel.setBounds(150,100,140,30);

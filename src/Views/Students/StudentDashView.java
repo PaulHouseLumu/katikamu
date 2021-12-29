@@ -15,6 +15,9 @@ public class StudentDashView implements ActionListener {
     JButton viewTimetable =new JButton("View Timetable");
     JLabel welcome=new JLabel("Welcome "+Name);
 
+    /**
+     * StudentDashView Constructor
+     */
     public StudentDashView(){
         welcome.setBounds(20,40,400,30);
         welcome.setForeground(Color.MAGENTA);

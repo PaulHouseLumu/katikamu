@@ -10,6 +10,7 @@ public class Template  extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(true);
         this.setSize(1200,620);
+        this.setLocation(450,200);
         this.setVisible(true);
     }
 }

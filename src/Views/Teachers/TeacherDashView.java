@@ -9,7 +9,8 @@ import java.awt.event.ActionListener;
 public class TeacherDashView {
 
     public TeacherDashView() {
-       new StudentSearch().setVisible(true);
+//       new StudentSearch().setVisible(true);
+        new AddResultsView();
 
     }
 
