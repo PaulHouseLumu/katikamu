@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d1b2e95-d97a-42cc-a40d-8ffc7d4b4ade" name="Default Changelist" comment="" />
+    <list default="true" id="8d1b2e95-d97a-42cc-a40d-8ffc7d4b4ade" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/Teachers/AddResultsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA2/Controller/Teachers/TeacherHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA2/Controller/Teachers/TeacherHomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA2/Katikamu.sql" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA2/Katikamu.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA2/Views/Students/StudentLoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA2/Views/Students/StudentLoginView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA2/Views/Teachers/TeacherLoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA2/Views/Teachers/TeacherLoginView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Students/StudentHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Students/StudentHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Teachers/TeacherHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Teachers/TeacherHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Katikamu.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/Katikamu.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Students/StudentDashView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Students/StudentDashView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Students/StudentLoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Students/StudentLoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Teachers/TeacherLoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Teachers/TeacherLoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Template.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Template.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,22 +164,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="588" y="187" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1640633889723" />
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1640769456087">
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1640820962243">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1640769456087" />
-    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1640769456086">
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1640820962243" />
+    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1640820962241">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1640769456086" />
-    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1640769456086">
+    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1640820962241" />
+    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1640820962240">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1640769456086" />
-    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1640769456087">
+    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1640820962240" />
+    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1640820962242">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1640769456087" />
+    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1640820962242" />
     <state x="190" y="56" key="new project wizard" timestamp="1640622028438">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
