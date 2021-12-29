@@ -31,6 +31,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="22sFcb2RhZPeoaatjzcApKD6vWD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,6 +42,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowMessages.ShowToolbar" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
@@ -133,6 +137,7 @@
         </serviceView>
       </list>
     </option>
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -156,10 +161,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="187" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1640766945675" />
-    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1640768738109">
+    <state x="550" y="239" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1640817394521">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1640768738109" />
+    <state x="550" y="239" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1640817394521" />
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1640818625106">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1640818625106" />
     <state x="588" y="187" key="FileChooserDialogImpl" timestamp="1640633889723">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
