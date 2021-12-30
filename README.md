@@ -1,5 +1,5 @@
 
-Check the **Master Branch**. It has the main project work.
+Check the **_"Master Branch"_**. It has the final consolidated project work.
 # katikamu
 Added results on the master branch.
 Most working code on master branch 
