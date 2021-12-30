@@ -12,4 +12,21 @@ This will  bring a default page which displays two buttons one for the student a
 The different dashboards will be loaded on successful login.
 Read what's on the screen to know what action to perform.
 
-Every contributed the final work was organised to this repository.
+#Structure**
+Views folder has the GUI.
+Controllers contain with the functionalities such as connecting to database, updating records to the database,retrieving data from the database and generally connecting to the back-end.
+Models define how you manipulate data for the different classes.
+
+NB:
+1. for the student to log in, their passwords are the combination of the regNumber and their age, no space
+2. Teacher are preinserted into the database. Below are their login details;
+   1. aksam@gmail.com 1234
+   2. kom@gmail.com  12345
+   3. paul@gmail.com  123456
+   4. gerald@gmail.com  123456
+
+3. To diaplay the list of all students utilise the filter by subject button an just select all
+
+
+Every one contributed the final work it was organised to the master branch.
+

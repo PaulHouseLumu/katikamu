@@ -50,7 +50,7 @@ public class TeacherHomeController implements User {
         Connection connection = new DButil().getConnection();
         PreparedStatement statement = null;
         try{
-            statement= connection.prepareStatement("UPDATE results SET mark=? ,grade=? WHERE student_id=? AND subject_id=?");
+            statement= connection.prepareStatement("UPDATE Results SET mark=? ,grade=? WHERE student_id=? AND subject_id=?");
             statement.setFloat(1, mark);
             statement.setString(2, grade);
             statement.setInt(3, student_id);
@@ -165,7 +165,7 @@ public class TeacherHomeController implements User {
         boolean status;
         Connection connection = new DButil().getConnection();
         // Prepare Statement
-        PreparedStatement st  = connection.prepareStatement("INSERT INTO timetable(teacher_id,class_id,subject_id,day,time_start,time_end) VALUES (?, ?,?,?,?,?)");
+        PreparedStatement st  = connection.prepareStatement("INSERT INTO Timetable(teacher_id,class_id,subject_id,day,time_start,time_end) VALUES (?,?,?,?,?,?)");
 
         // Set Parameters
         st.setString(1, tt.getTeacher());

@@ -54,9 +54,9 @@ public class StudentHomeController implements User {
 
         try {
             statement = connection.createStatement();
-            resultSet=statement.executeQuery( "SELECT teachers.name as teacher,subjects.name,time_start,time_end,day FROM timetable " +
-                    "INNER JOIN teachers USING(id) " +
-                    "INNER JOIN subjects USING(id) " +
+            resultSet=statement.executeQuery( "SELECT Teachers.name as teacher,Subjects.name,time_start,time_end,day FROM Timetable " +
+                    "INNER JOIN Teachers USING(id) " +
+                    "INNER JOIN Subjects USING(id) " +
                     "WHERE class_id="+ClASS_ID);
             while (resultSet.next()) {
                 Timetable  t = new Timetable();
@@ -86,9 +86,9 @@ public class StudentHomeController implements User {
 
         try {
             statement = connection.createStatement();
-            resultSet=statement.executeQuery( "SELECT student_id,mark,grade,subjects.name FROM  results "+
-                    "INNER JOIN subjects ON results.subject_id=subjects.id "+
-                    "WHERE results.student_id="+STUDENT_ID);
+            resultSet=statement.executeQuery( "SELECT student_id,mark,grade,Subjects.name FROM  Results "+
+                    "INNER JOIN Subjects ON Results.subject_id=Subjects.id "+
+                    "WHERE Results.student_id="+STUDENT_ID);
             while (resultSet.next()) {
                 StudentResult  t = new StudentResult();
                 t.setGrade(resultSet.getString("grade"));

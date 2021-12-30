@@ -49,7 +49,7 @@ public class StudentDAO {
                 //int lastID;
                 //lastID = myConn.("select * from students");
                 
-                myStmt1 = myConn.prepareStatement("insert into Students (registration_number, first_name, last_name, gender, age, class_id,password) values(?,?,?,?,?,?,SHA(?))", Statement.RETURN_GENERATED_KEYS);
+                myStmt1 = myConn.prepareStatement("insert into Students (registration_number, first_name, last_name, gender, age,class_id,password) values(?,?,?,?,?,?,SHA(?))", Statement.RETURN_GENERATED_KEYS);
                 myStmt2 = myConn.prepareStatement("insert into Results (student_id,subject_id) values(?,?)");
                 
                 // Set Parameters
@@ -62,6 +62,7 @@ public class StudentDAO {
                         break;
                     case "P.2":
                         class_id = 2;
+                        break;
                     case "P.3":
                         class_id = 3;
                         break;
@@ -238,6 +239,7 @@ public class StudentDAO {
                 break;
             case 2:
                 class_id = "P.2";
+                break;
             case 3:
                 class_id = "P.3";
                 break;

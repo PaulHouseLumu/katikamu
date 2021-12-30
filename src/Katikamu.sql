@@ -83,23 +83,23 @@ ALTER TABLE `Results` ADD CONSTRAINT `Results_fk2` FOREIGN KEY (`student_id`) RE
 
 
 
-INSERT INTO `teachers` (`id`, `name`, `email`, `password`) VALUES (NULL, 'aksam', 'aksam@gmail.com', SHA1('1234'));
-INSERT INTO `teachers` (`id`, `name`, `email`, `password`) VALUES (NULL, 'kom', 'kom@gmail.com', SHA1('12345'));
-INSERT INTO `teachers` (`id`, `name`, `email`, `password`) VALUES (NULL, 'paul', 'paul@gmail.com', SHA1('123456'));
-INSERT INTO `teachers` (`id`, `name`, `email`, `password`) VALUES (NULL, 'gerald', 'gerald@gmail.com', SHA1('123456'));
+INSERT INTO `Teachers` (`id`, `name`, `email`, `password`) VALUES (NULL, 'aksam', 'aksam@gmail.com', SHA1('1234'));
+INSERT INTO `Teachers` (`id`, `name`, `email`, `password`) VALUES (NULL, 'kom', 'kom@gmail.com', SHA1('12345'));
+INSERT INTO `Teachers` (`id`, `name`, `email`, `password`) VALUES (NULL, 'paul', 'paul@gmail.com', SHA1('123456'));
+INSERT INTO `Teachers` (`id`, `name`, `email`, `password`) VALUES (NULL, 'gerald', 'gerald@gmail.com', SHA1('123456'));
 
-INSERT INTO `classes` (`id`, `name`, `year`) VALUES (NULL, 'P.1', '2022');
-INSERT INTO `classes` (`id`, `name`, `year`) VALUES (NULL, 'P.2', '2022');
-INSERT INTO `classes` (`id`, `name`, `year`) VALUES (NULL, 'P.3', '2022');
-INSERT INTO `classes` (`id`, `name`, `year`) VALUES (NULL, 'P.4', '2022');
-INSERT INTO `classes` (`id`, `name`, `year`) VALUES (NULL, 'P.5', '2022');
-INSERT INTO `classes` (`id`, `name`, `year`) VALUES (NULL, 'P.6', '2022');
-INSERT INTO `classes` (`id`, `name`, `year`) VALUES (NULL, 'P.7', '2022');
+INSERT INTO `Classes` (`id`, `name`, `year`) VALUES (NULL, 'P.1', '2022');
+INSERT INTO `Classes` (`id`, `name`, `year`) VALUES (NULL, 'P.2', '2022');
+INSERT INTO `Classes` (`id`, `name`, `year`) VALUES (NULL, 'P.3', '2022');
+INSERT INTO `Classes` (`id`, `name`, `year`) VALUES (NULL, 'P.4', '2022');
+INSERT INTO `Classes` (`id`, `name`, `year`) VALUES (NULL, 'P.5', '2022');
+INSERT INTO `Classes` (`id`, `name`, `year`) VALUES (NULL, 'P.6', '2022');
+INSERT INTO `Classes` (`id`, `name`, `year`) VALUES (NULL, 'P.7', '2022');
 
-INSERT INTO `subjects` (`id`, `name`) VALUES (NULL, 'ENGLISH'), (NULL, 'MATH');
-INSERT INTO `subjects` (`id`, `name`) VALUES (NULL, 'SST'), (NULL, 'SCIENCE'),(NULL,'No English'),(NULL,'No SST'),(NULL,'No Maths'),(NULL,'No Science');
+INSERT INTO `Subjects` (`id`, `name`) VALUES (NULL, 'ENGLISH'), (NULL, 'MATH');
+INSERT INTO `Subjects` (`id`, `name`) VALUES (NULL, 'SST'), (NULL, 'SCIENCE'),(NULL,'No English'),(NULL,'No SST'),(NULL,'No Maths'),(NULL,'No Science');
 
-INSERT INTO `timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '2', '1', 'Monday', '21:50:38', '22:50:38');
-INSERT INTO `timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '3', '1', 'Monday', '21:50:38', '22:50:38');
-INSERT INTO `timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '4', '1', 'Monday', '21:50:38', '22:50:38');
-INSERT INTO `timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '5', '1', 'Monday', '21:50:38', '22:50:38');
+INSERT INTO `Timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '2', '1', 'Monday', '21:50:38', '22:50:38');
+INSERT INTO `Timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '3', '1', 'Monday', '21:50:38', '22:50:38');
+INSERT INTO `Timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '4', '1', 'Monday', '21:50:38', '22:50:38');
+INSERT INTO `Timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '5', '1', 'Monday', '21:50:38', '22:50:38');
