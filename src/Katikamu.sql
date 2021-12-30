@@ -61,10 +61,9 @@ drop table if exists `Results`;
 CREATE TABLE `Results` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`subject_id` INT NOT NULL ,
-	`class_id` INT NOT NULL ,
 	`student_id` INT NOT NULL,
-	`result` FLOAT,
-	`grade` varchar(255),
+	`mark` FLOAT NULL,
+	`grade` varchar(255) NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -77,7 +76,7 @@ ALTER TABLE `Timetable` ADD CONSTRAINT `Timetable_fk2` FOREIGN KEY (`subject_id`
 
 ALTER TABLE `Results` ADD CONSTRAINT `Results_fk0` FOREIGN KEY (`subject_id`) REFERENCES `Subjects`(`id`);
 
-ALTER TABLE `Results` ADD CONSTRAINT `Results_fk1` FOREIGN KEY (`class_id`) REFERENCES `Classes`(`id`);
+ALTER TABLE `Students` ADD CONSTRAINT `students_fk1` FOREIGN KEY (`class_id`) REFERENCES `Classes`(`id`);
 
 ALTER TABLE `Results` ADD CONSTRAINT `Results_fk2` FOREIGN KEY (`student_id`) REFERENCES `Students`(`id`);
 

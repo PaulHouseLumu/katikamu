@@ -63,8 +63,8 @@ public class StudentHomeController implements User {
                 t.setDay(resultSet.getString("day"));
                 t.setSubject(resultSet.getString("name"));
                 t.setTeacher(resultSet.getString("teacher"));
-                t.setTime_start(resultSet.getTime("time_start"));
-                t.setTime_end(resultSet.getTime("time_end"));
+                t.setTime_start(resultSet.getString("time_start"));
+                t.setTime_end(resultSet.getString("time_end"));
                 rs.add(t);
             }
         }catch (SQLException sqlException){

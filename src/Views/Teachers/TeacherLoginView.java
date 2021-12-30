@@ -5,6 +5,7 @@ import Controller.Teachers.TeacherHomeController;
 import Views.Students.StudentDashView;
 import Views.Students.StudentLoginView;
 import Views.Template;
+import Views.WelcomeView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +14,7 @@ import java.awt.event.ActionListener;
 
 public class TeacherLoginView implements ActionListener {
     Template frame = new Template("Teachers' Login");
+    JButton back = new JButton("Back");
     JButton loginBtn =new JButton("Login");
     JTextField usernameField =new JTextField();
     JPasswordField passwordField = new JPasswordField();
@@ -23,6 +25,9 @@ public class TeacherLoginView implements ActionListener {
     public TeacherLoginView(){
         heading.setBounds(170,25,300,30);
         heading.setForeground(Color.blue);
+        back.setBounds(10,10,80,20);
+        back.addActionListener(this);
+        frame.add(back);
         heading.setFont(new Font(null,Font.BOLD,25));
         usernameLabel.setBounds(150,100,140,30);
         passwordLabel.setBounds(150,150,140,30);
@@ -47,6 +52,10 @@ public class TeacherLoginView implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==back){
+            frame.dispose();
+            new WelcomeView();
+        }
         if(e.getSource()==loginBtn){
             String username=usernameField.getText();
             String password=String.valueOf(passwordField.getPassword());
