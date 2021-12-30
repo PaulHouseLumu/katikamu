@@ -10,4 +10,6 @@ Import the Katikamu.sql into mysql server.This will create tables needed to run 
 Run the compile and Run Main.java
 This will  bring a default page which displays two buttons one for the student and another for th teacher .Choose what you are.
 The different dashboards will be loaded on successful login.
-Read what's on the screen to know what action to perform
+Read what's on the screen to know what action to perform.
+
+Every contributed the final work was organised to this repository.
