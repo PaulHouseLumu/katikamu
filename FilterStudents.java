@@ -4,37 +4,39 @@
  */
 package katikamuprimaryschool;
 
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import java.awt.FlowLayout;
-import javax.swing.JTextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import javax.swing.JOptionPane;
-import java.util.List;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
  * @author root
  */
-public class StudentSearch extends javax.swing.JFrame {
-private JPanel contentPane;
+public class FilterStudents extends javax.swing.JFrame {
+
+    
+    
+        private JPanel contentPane;
 	private JTextField registrationNumberTextField;
 	private JButton btnSearch;
 	private JScrollPane scrollPane;
 	private JTable table;
         private JButton btnAddStudent;
         private JButton btnFilterStudents;
+        private JComboBox subjectComboBox;
 
 	private StudentDAO studentDAO;
        
@@ -46,7 +48,7 @@ private JPanel contentPane;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StudentSearch frame = new StudentSearch();
+					FilterStudents frame = new FilterStudents();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -54,22 +56,25 @@ private JPanel contentPane;
 			}
 		});
 	}
+        
     /**
      * Creates new form StudentSearch
      */
-        
-        
-    public StudentSearch() {
+    /**
+     * Creates new form FilterStudents
+     */
+    public FilterStudents() {
         initComponents();
         
-        // create the DAO
+        
+     // create the DAO
 		try {
 			studentDAO = new StudentDAO();
 		} catch (Exception exc) {
 			JOptionPane.showMessageDialog(this, "Error: " + exc, "Error", JOptionPane.ERROR_MESSAGE); 
 		}
 		
-		setTitle("Student Search App");
+		setTitle("Filter Students By Subject");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -82,12 +87,22 @@ private JPanel contentPane;
 		flowLayout.setAlignment(FlowLayout.LEFT);
 		contentPane.add(panel, BorderLayout.NORTH);
 		
-		JLabel lblEnterRegistrationNumber = new JLabel("Enter Student Reg.No:");
-		panel.add(lblEnterRegistrationNumber);
-		
-		registrationNumberTextField = new JTextField();
-		panel.add(registrationNumberTextField);
-		registrationNumberTextField.setColumns(10);
+		JLabel lblSelectSubject = new JLabel("Select Subject:");
+		panel.add(lblSelectSubject);
+		String[] subjectsTaken = {
+                    "ALL",
+                    "English",
+                    "SST",
+                    "Maths",
+                    "Science",
+                    "No English",
+                    "No SST",
+                    "No Maths",
+                    "No Science"
+                };
+		subjectComboBox = new JComboBox(subjectsTaken);
+		panel.add(subjectComboBox);
+		//subjectComboBox.setColumns(10);
 		
                                                                                                                                                                 btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
@@ -101,15 +116,18 @@ private JPanel contentPane;
 				// Print out students				
 				
 				try {
-					String registrationNumber = registrationNumberTextField.getText();
+					String subject = (String)subjectComboBox.getSelectedItem();
 
 					List<Student> students = null;
 
-					if (registrationNumber != null && registrationNumber.trim().length() > 0) {
-						students = studentDAO.searchStudents(registrationNumber);
-					} else {
+					if(subject == "ALL"){
 						students = studentDAO.getAllStudents();
-					}
+					}else if(subject != null && subject.trim().length() > 0) {
+						students = studentDAO.filterStudents(subject);
+                                                
+					} else{
+                                            
+                                        }
 					
 					// create the model and update the "table"
 					StudentTableModel model = new StudentTableModel(students);
@@ -122,7 +140,7 @@ private JPanel contentPane;
 					}
 					*/
 				} catch (Exception exc) {
-					JOptionPane.showMessageDialog(StudentSearch.this, "Error: " + exc, "Error", JOptionPane.ERROR_MESSAGE); 
+					JOptionPane.showMessageDialog(FilterStudents.this, "Error: " + exc, "Error", JOptionPane.ERROR_MESSAGE); 
 				}
 				
 			}
@@ -178,6 +196,7 @@ private JPanel contentPane;
         }
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -206,7 +225,7 @@ private JPanel contentPane;
     /**
      * @param args the command line arguments
      */
-    
+   
 
     // Variables declaration - do not modify                     
     // End of variables declaration                   

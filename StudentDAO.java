@@ -43,30 +43,57 @@ public class StudentDAO {
         
     }
     
-     public void addStudent(Student theStudent) throws Exception {
+     public void addStudent(Student theStudent, int[] subjectsTaken) throws Exception {
             
-            PreparedStatement myStmt = null;
             
+            PreparedStatement myStmt1 = null;
+            PreparedStatement myStmt2 = null;
             try{
                 // Prepare Statement
-                myStmt = myConn.prepareStatement("insert into employees (registration_number, first_name, last_name, gender, age, subject, student_class, mark) values(?,?,?,?,?,?,?,?)");
+                //int lastID;
+                //lastID = myConn.("select * from students");
+                
+                myStmt1 = myConn.prepareStatement("insert into Students (`registration_number`, `first_name`, `last_name`, `gender`, `age`, `student_class`) values(?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+                myStmt2 = myConn.prepareStatement("insert into Results (`students_id`, `subjects_id`) values(?,?)");
                 
                 // Set Parameters
-                myStmt.setString(1, theStudent.getRegistrationNumber());
-                myStmt.setString(2, theStudent.getFirstName());
-                myStmt.setString(3, theStudent.getLastName());
-                myStmt.setString(4, theStudent.getGender());
-                myStmt.setInt(5, theStudent.getAge());
-                myStmt.setString(6, theStudent.getSubject());
-                myStmt.setString(7, theStudent.getStudentClass());
-                myStmt.setInt(8, theStudent.getMark());
+                System.out.println(theStudent.getRegistrationNumber());
+                System.out.println(theStudent.getFirstName());
+                
+                //myStmt.setInt(1,3);
+                myStmt1.setString(1, theStudent.getRegistrationNumber());
+                myStmt1.setString(2, theStudent.getFirstName());
+                myStmt1.setString(3, theStudent.getLastName());
+                myStmt1.setString(4, theStudent.getGender());
+                myStmt1.setInt(5, theStudent.getAge());
+                myStmt1.setString(6, theStudent.getStudentClass());
+                
                 
                 //Execute SQL
-                myStmt.executeUpdate();
+                myStmt1.executeUpdate();
+                
+                // Getting last the just inserted student ID to be used in storing subjects
+                // taken by the student in tbl_Results
+                ResultSet rs = myStmt1.getGeneratedKeys();
+                if(rs.next()){
+                    int id = rs.getInt(1);
+                    
+                    int index = 0;
+                    while(index < subjectsTaken.length)
+                    {
+                        myStmt2.setInt(1, id);
+                        myStmt2.setInt(2, subjectsTaken[index]);
+                        
+                        // Execute SQL
+                        myStmt2.executeUpdate();
+                        index++;
+                    }
+                }
                 
             }
             finally {
-            myStmt.close();
+            myStmt1.close();
+            myStmt2.close();
         } 
         }
 	
@@ -78,7 +105,7 @@ public class StudentDAO {
 		
 		try {
 			myStmt = myConn.createStatement();
-			myRs = myStmt.executeQuery("select * from students");
+			myRs = myStmt.executeQuery("select * from Students");
 			
 			while (myRs.next()) {
 				Student tempStudent = convertRowToStudent(myRs);
@@ -100,7 +127,7 @@ public class StudentDAO {
 
 		try {
 			registrationNumber += "%";
-			myStmt = myConn.prepareStatement("select * from students where registration_number like ?");
+			myStmt = myConn.prepareStatement("select * from Students where registration_number like ?");
 			
 			myStmt.setString(1, registrationNumber);
 			
@@ -117,6 +144,64 @@ public class StudentDAO {
 			close(myStmt, myRs);
 		}
 	}
+        
+         public List<Student> filterStudents(String subject) throws Exception {
+		List<Student> list = new ArrayList<>();
+
+		PreparedStatement myStmt1 = null;
+		ResultSet myRs1 = null;
+
+		try{
+                    int id;
+                    switch (subject){
+                        case "English":
+                            id = 1;
+                            break;
+                        case "SST":
+                            id = 2;
+                            break;
+                        case "Maths":
+                            id = 3;
+                            break;
+                        case "Science":
+                            id = 4;
+                            break;
+                        case "No English":
+                            id = 5;
+                            break;
+                        case "No SST":
+                            id = 6;
+                            break;
+                        case "No Maths":
+                            id = 7;
+                            break;
+                        case "No Science":
+                            id = 8;
+                            break;
+                        default:
+                            id=0;
+                    }
+                    
+                     //myStmt1 = myConn.prepareStatement("SELECT students.registration_number, students.first_name, students.last_name, students.gender, students.age, students.student_class FROM students WHERE students.id ='"+id+"'");
+                    
+                    myStmt1 = myConn.prepareStatement("SELECT Students.registration_number, Students.first_name, Students.last_name, Students.gender, Students.age, Students.student_class "
+                            + "FROM Students INNER JOIN Results ON Results.students_id = Students.id WHERE Results.subjects_id ='"+id+"'");
+			
+                   // myStmt1.setString(1, subject);
+
+                    myRs1 = myStmt1.executeQuery();
+
+                    while (myRs1.next()) {
+                                Student tempStudent = convertRowToStudent(myRs1);
+				list.add(tempStudent);
+			}
+			
+			return list;
+		}
+		finally {
+			close(myStmt1, myRs1);
+		}
+	}
 	
 	private Student convertRowToStudent(ResultSet myRs) throws SQLException {
 		
@@ -125,13 +210,32 @@ public class StudentDAO {
 		String lastName = myRs.getString("last_name");
                 String gender = myRs.getString("gender");
 		int age = myRs.getInt("age");
-                String subject = myRs.getString("subject");
+                //String subject = myRs.getString("subject");
                 String studentClass = myRs.getString("student_class");
-                int mark = myRs.getInt("mark");
+                //int mark = myRs.getInt("mark");
                 
                
 		
-		Student tempStudent = new Student(registrationNumber, firstName, lastName, gender, age, subject, studentClass, mark);
+		Student tempStudent = new Student(registrationNumber, firstName, lastName, gender, age, studentClass);
+		
+		return tempStudent;
+	}
+        
+        
+        private Student convertRowToStudent1(ResultSet myRs) throws SQLException {
+		
+		String registrationNumber = myRs.getString("registration_number");
+                String firstName = myRs.getString("first_name");
+		String lastName = myRs.getString("last_name");
+                String gender = myRs.getString("gender");
+		int age = myRs.getInt("age");
+                String subject = myRs.getString("subject");
+                String studentClass = myRs.getString("student_class");
+                //int mark = myRs.getInt("mark");
+                
+               
+		
+		Student tempStudent = new Student(registrationNumber, firstName, lastName, gender, age, studentClass, subject);
 		
 		return tempStudent;
 	}
@@ -159,10 +263,11 @@ public class StudentDAO {
 	public static void main(String[] args) throws Exception {
 		
 		StudentDAO dao = new StudentDAO();
-		System.out.println(dao.searchStudents("thom"));
 
 		System.out.println(dao.getAllStudents());
 	}
+
+    
 
    
 }
