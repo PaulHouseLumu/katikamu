@@ -42,6 +42,9 @@ public class AddResultsView implements ActionListener {
         for(Object sub:retrieveStudents()){
             student.addItem(sub);
         }
+        if(retrieveStudents().size()<1){
+            JOptionPane.showMessageDialog(null, "No Student Available");
+        }
         student.setFont(new Font("Arial", Font.PLAIN, 20));
         student.setBounds(200,100,300, 25);
         student.addActionListener(this);

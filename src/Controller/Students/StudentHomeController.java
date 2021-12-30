@@ -63,8 +63,8 @@ public class StudentHomeController implements User {
                 t.setDay(resultSet.getString("day"));
                 t.setSubject(resultSet.getString("name"));
                 t.setTeacher(resultSet.getString("teacher"));
-                t.setTime_start(resultSet.getTime("time_start"));
-                t.setTime_end(resultSet.getTime("time_end"));
+                t.setTime_start(resultSet.getString("time_start"));
+                t.setTime_end(resultSet.getString("time_end"));
                 rs.add(t);
             }
         }catch (SQLException sqlException){
@@ -86,13 +86,13 @@ public class StudentHomeController implements User {
 
         try {
             statement = connection.createStatement();
-            resultSet=statement.executeQuery( "SELECT student_id,result,grade,subjects.name FROM  results "+
+            resultSet=statement.executeQuery( "SELECT student_id,mark,grade,subjects.name FROM  results "+
                     "INNER JOIN subjects ON results.subject_id=subjects.id "+
                     "WHERE results.student_id="+STUDENT_ID);
             while (resultSet.next()) {
                 StudentResult  t = new StudentResult();
                 t.setGrade(resultSet.getString("grade"));
-                t.setResult(resultSet.getFloat("result"));
+                t.setResult(resultSet.getFloat("mark"));
                 t.setName(resultSet.getString("name"));
                 rs.add(t);
             }

@@ -2,11 +2,9 @@ package Controller.Teachers;
 
 import Controller.User;
 import DButils.DButil;
+import Models.Timetable.Timetable;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +50,7 @@ public class TeacherHomeController implements User {
         Connection connection = new DButil().getConnection();
         PreparedStatement statement = null;
         try{
-            statement= connection.prepareStatement("UPDATE results SET result=? ,grade=? WHERE student_id=? AND subject_id=?");
+            statement= connection.prepareStatement("UPDATE results SET mark=? ,grade=? WHERE student_id=? AND subject_id=?");
             statement.setFloat(1, mark);
             statement.setString(2, grade);
             statement.setInt(3, student_id);
@@ -92,6 +90,50 @@ public class TeacherHomeController implements User {
     }
 
     /**
+     * Gets All teachers
+     * @return
+     */
+    public static List<Object> retrieveTeachers() {
+        List<Object> ls = new ArrayList<>();
+        Connection connection = new DButil().getConnection();
+        try {
+            PreparedStatement st = (PreparedStatement) connection.prepareStatement("SELECT * FROM Teachers");
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                ls.add(new Object[]{id, name});
+            }
+
+        } catch (SQLException sqlException) {
+            System.out.println(sqlException.getMessage());
+        }
+        return ls;
+    }
+
+    /**
+     * Gets all Classes
+     * @return
+     */
+    public static List<Object> retrieveClass() {
+        List<Object> ls = new ArrayList<>();
+        Connection connection = new DButil().getConnection();
+        try {
+            PreparedStatement st = (PreparedStatement) connection.prepareStatement("SELECT * FROM Classes");
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name")+"- "+rs.getString("year");
+                ls.add(new Object[]{id, name});
+            }
+
+        } catch (SQLException sqlException) {
+            System.out.println(sqlException.getMessage());
+        }
+        return ls;
+    }
+
+    /**
      * Gets all students and returns a list of objects for students
      * @return
      */
@@ -111,5 +153,35 @@ public class TeacherHomeController implements User {
             System.out.println(sqlException.getMessage());
         }
         return ls;
+    }
+
+    /**
+     * Adds a new timetable Entry
+     * @param tt
+     * @return
+     * @throws SQLException
+     */
+    public static  boolean addTimeTable(Timetable tt) throws SQLException {
+        boolean status;
+        Connection connection = new DButil().getConnection();
+        // Prepare Statement
+        PreparedStatement st  = connection.prepareStatement("INSERT INTO timetable(teacher_id,class_id,subject_id,day,time_start,time_end) VALUES (?, ?,?,?,?,?)");
+
+        // Set Parameters
+        st.setString(1, tt.getTeacher());
+        st.setInt(2, tt.getClass_id());
+        st.setString(3, tt.getSubject());
+        st.setString(4, tt.getDay());
+        st.setString(5, tt.getTime_start());
+        st.setString(6, tt.getTime_end());
+
+        //Execute SQL
+        int rowAffected=st.executeUpdate();
+        if(rowAffected>0){
+            status=true;
+        }else{
+            status = false;
+         }
+        return status;
     }
 }

@@ -1,18 +1,20 @@
 package Views.Students;
 
 import Views.Template;
+import Views.WelcomeView;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static Controller.Students.StudentHomeController.Name;
+import static Controller.Students.StudentHomeController.*;
 
 public class StudentDashView implements ActionListener {
     Template frame = new Template("Student Dashboard");
     JButton viewResults =new JButton("View Your Results");
     JButton viewTimetable =new JButton("View Timetable");
+    JButton logout =new JButton("logout");
     JLabel welcome=new JLabel("Welcome "+Name);
 
     /**
@@ -22,7 +24,10 @@ public class StudentDashView implements ActionListener {
         welcome.setBounds(20,40,400,30);
         welcome.setForeground(Color.MAGENTA);
         welcome.setFont(new Font(null,Font.BOLD,20));
+        logout.setBounds(400,10,100,30);
+        logout.addActionListener(this);
         frame.add(welcome);
+        frame.add(logout);
         viewTimetable.setBounds(160,130,300,30);
         viewResults.setBounds(160,170,300,30);
         viewTimetable.setFocusable(false);
@@ -48,5 +53,11 @@ public class StudentDashView implements ActionListener {
               frame.dispose();
               new StudentTimetable();
           }
+        if(e.getSource()==logout){
+            ClASS_ID=0;
+            STUDENT_ID=0;
+            frame.dispose();
+            new WelcomeView();
+        }
     }
 }

@@ -13,15 +13,17 @@ public class WelcomeView implements ActionListener {
     Template frame = new Template("Welcome to Katikamu");
     JButton teacher =new JButton("View As Teacher");
     JButton student =new JButton("View As Student");
-
+    ImageIcon icon = new ImageIcon("images.jfif");
+    JLabel label = new JLabel(icon);
     public WelcomeView(){
-
-        student.setBounds(160,130,300,30);
-        teacher.setBounds(160,170,300,30);
+         label.setBounds(220,10,200,200);
+        student.setBounds(160,240,300,30);
+        teacher.setBounds(160,280,300,30);
         student.setFocusable(false);
         teacher.setFocusable(false);
         student.addActionListener(this);
         teacher.addActionListener(this);
+        frame.add(label);
         frame.add(teacher);
         frame.add(student);
         frame.setLayout(null);

@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Models.Students;
+package Models.Teachers;
+
+import Models.Students.Student;
 
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
@@ -11,7 +13,7 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author root
  */
-public class StudentTableModel extends AbstractTableModel{
+public class FilterStudentsBySubjectTableModel extends AbstractTableModel{
     
         private static final int REGISTRATION_NUMBER_COL = 0;
         private static final int FIRST_NAME_COL = 1;
@@ -19,14 +21,14 @@ public class StudentTableModel extends AbstractTableModel{
 	private static final int GENDER_COL = 3;
 	private static final int AGE_COL = 4;
         private static final int STUDENT_CLASS_COL = 5;
-	
+        private static final int SUBJECT_COL = 6;
 	
 
 	private String[] columnNames = { "Registration Number", "First Name", "Last Name",
-			"Gender", "Age", "Student Class" };
+			"Gender", "Age", "Student Class", "Subject" };
 	private List<Student> students;
 
-	public StudentTableModel(List<Student> theStudents) {
+	public FilterStudentsBySubjectTableModel(List<Student> theStudents) {
 		students = theStudents;
 	}
     @Override
@@ -62,6 +64,8 @@ public class StudentTableModel extends AbstractTableModel{
 			return tempStudent.getAge();
                 case STUDENT_CLASS_COL:
 			return tempStudent.getStudentClass();
+                case SUBJECT_COL:
+			return tempStudent.getSubject();
 		
 		default:
 			return tempStudent.getRegistrationNumber();
@@ -73,4 +77,7 @@ public class StudentTableModel extends AbstractTableModel{
 		return getValueAt(0, c).getClass();
 	}
 }
+
+    
+
 

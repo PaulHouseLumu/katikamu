@@ -12,7 +12,6 @@ CREATE TABLE `Students` (
 	`gender` varchar(255) NOT NULL,
 	`registration_number` varchar(255) NOT NULL UNIQUE,
 	`age` INT(255) NOT NULL,
-	`email` varchar(255) NOT NULL,
 	`password` varchar(255) NOT NULL,
 	PRIMARY KEY (`id`)
 );
@@ -61,10 +60,9 @@ drop table if exists `Results`;
 CREATE TABLE `Results` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`subject_id` INT NOT NULL ,
-	`class_id` INT NOT NULL ,
 	`student_id` INT NOT NULL,
-	`result` FLOAT,
-	`grade` varchar(255),
+	`mark` FLOAT NULL,
+	`grade` varchar(255) NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -77,7 +75,7 @@ ALTER TABLE `Timetable` ADD CONSTRAINT `Timetable_fk2` FOREIGN KEY (`subject_id`
 
 ALTER TABLE `Results` ADD CONSTRAINT `Results_fk0` FOREIGN KEY (`subject_id`) REFERENCES `Subjects`(`id`);
 
-ALTER TABLE `Results` ADD CONSTRAINT `Results_fk1` FOREIGN KEY (`class_id`) REFERENCES `Classes`(`id`);
+ALTER TABLE `Students` ADD CONSTRAINT `students_fk1` FOREIGN KEY (`class_id`) REFERENCES `Classes`(`id`);
 
 ALTER TABLE `Results` ADD CONSTRAINT `Results_fk2` FOREIGN KEY (`student_id`) REFERENCES `Students`(`id`);
 
@@ -99,7 +97,7 @@ INSERT INTO `classes` (`id`, `name`, `year`) VALUES (NULL, 'P.6', '2022');
 INSERT INTO `classes` (`id`, `name`, `year`) VALUES (NULL, 'P.7', '2022');
 
 INSERT INTO `subjects` (`id`, `name`) VALUES (NULL, 'ENGLISH'), (NULL, 'MATH');
-INSERT INTO `subjects` (`id`, `name`) VALUES (NULL, 'SST'), (NULL, 'SCIENCE');
+INSERT INTO `subjects` (`id`, `name`) VALUES (NULL, 'SST'), (NULL, 'SCIENCE'),(NULL,'No English'),(NULL,'No SST'),(NULL,'No Maths'),(NULL,'No Science');
 
 INSERT INTO `timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '2', '1', 'Monday', '21:50:38', '22:50:38');
 INSERT INTO `timetable` (`id`, `teacher_id`, `class_id`, `subject_id`, `day`, `time_start`, `time_end`) VALUES (NULL, '1', '3', '1', 'Monday', '21:50:38', '22:50:38');
