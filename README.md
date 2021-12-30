@@ -1,5 +1,5 @@
 
-Check out the main work on Master Branch
+Check the **Master Branch**. It has the main project work.
 # katikamu
 Added results on the master branch.
 Most working code on master branch 
