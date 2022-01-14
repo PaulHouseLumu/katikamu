@@ -31,6 +31,7 @@ public class StudentSearch extends JFrame {
 private JPanel contentPane;
 	private JTextField registrationNumberTextField;
 	private JButton btnSearch;
+	private JButton btnViewAll;
 	private JScrollPane scrollPane;
 	private JTable table;
         private JButton btnAddStudent;
@@ -83,7 +84,7 @@ private JPanel contentPane;
 		flowLayout.setAlignment(FlowLayout.LEFT);
 		contentPane.add(panel, BorderLayout.NORTH);
 		
-		JLabel lblEnterRegistrationNumber = new JLabel("Enter Student Reg.No:");
+		JLabel lblEnterRegistrationNumber = new JLabel("Enter Reg.No:");
 		panel.add(lblEnterRegistrationNumber);
 		
 		registrationNumberTextField = new JTextField();
@@ -108,20 +109,18 @@ private JPanel contentPane;
 
 					if (registrationNumber != null && registrationNumber.trim().length() > 0) {
 						students = studentDAO.searchStudents(registrationNumber);
+						
+						// create the model and update the "table"
+						StudentTableModel model = new StudentTableModel(students);
+					
+						table.setModel(model);
+					
+						
 					} else {
-						students = studentDAO.getAllStudents();
+						
 					}
 					
-					// create the model and update the "table"
-					StudentTableModel model = new StudentTableModel(students);
 					
-					table.setModel(model);
-					
-					/*
-					for (Student temp : students) {
-						System.out.println(temp);
-					}
-					*/
 				} catch (Exception exc) {
 					JOptionPane.showMessageDialog(StudentSearch.this, "Error: " + exc, "Error", JOptionPane.ERROR_MESSAGE); 
 				}
@@ -129,6 +128,27 @@ private JPanel contentPane;
 			}
 		});
 		panel.add(btnSearch);
+		
+		btnViewAll = new JButton("View All");
+                btnViewAll.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                         try{
+                            List<Student> students = null;
+                            students = studentDAO.getAllStudents();
+                            
+                            StudentTableModel model = new StudentTableModel(students);
+					
+                            table.setModel(model);
+                            
+                         }catch(Exception exc){
+                             
+                             JOptionPane.showMessageDialog(StudentSearch.this, "Error: " + exc, "Error", JOptionPane.ERROR_MESSAGE); 
+                         }
+                    }
+                         
+                });
+                
+                panel.add(btnViewAll);
 		
 		scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
