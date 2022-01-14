@@ -86,15 +86,18 @@ public class StudentHomeController implements User {
 
         try {
             statement = connection.createStatement();
-            resultSet=statement.executeQuery( "SELECT student_id,mark,grade,Subjects.name FROM  Results "+
+            resultSet=statement.executeQuery( "SELECT student_id,mark,grade,Subjects.name, subject_id FROM  Results "+
                     "INNER JOIN Subjects ON Results.subject_id=Subjects.id "+
                     "WHERE Results.student_id="+STUDENT_ID);
             while (resultSet.next()) {
+                if(resultSet.getInt("subject_id") < 5 ) {
+
                 StudentResult  t = new StudentResult();
                 t.setGrade(resultSet.getString("grade"));
                 t.setResult(resultSet.getFloat("mark"));
                 t.setName(resultSet.getString("name"));
                 rs.add(t);
+                }
             }
         }catch (SQLException sqlException){
             System.out.println(sqlException.getMessage());

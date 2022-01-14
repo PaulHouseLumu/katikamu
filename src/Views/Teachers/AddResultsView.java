@@ -97,7 +97,7 @@ public class AddResultsView implements ActionListener {
         if(e.getSource()==sub){
             try {
                 Object[] selected_subject = (Object[]) subject.getSelectedItem();
-                Object[] selected_student = (Object[]) subject.getSelectedItem();
+                Object[] selected_student = (Object[]) student.getSelectedItem();
                 Float marks = Float.parseFloat(mark.getText());
                 int subjectInd=0;
                 if(selected_subject != null) {subjectInd= (Integer) selected_subject[0];}else {
