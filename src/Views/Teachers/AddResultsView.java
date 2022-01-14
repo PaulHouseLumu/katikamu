@@ -97,7 +97,7 @@ public class AddResultsView implements ActionListener {
         if(e.getSource()==sub){
             try {
                 Object[] selected_subject = (Object[]) subject.getSelectedItem();
-                Object[] selected_student = (Object[]) subject.getSelectedItem();
+                Object[] selected_student = (Object[]) student.getSelectedItem();
                 Float marks = Float.parseFloat(mark.getText());
                 int subjectInd=0;
                 if(selected_subject != null) {subjectInd= (Integer) selected_subject[0];}else {
@@ -108,6 +108,8 @@ public class AddResultsView implements ActionListener {
                     JOptionPane.showMessageDialog(null, "The please select a Subject");
                 }
                  if(mark !=null && selected_student != null && selected_subject != null ) {
+                     System.out.println(subjectInd);
+                     System.out.println(studentInd);
                      if (new TeacherHomeController().recordStudentMarks(studentInd, marks, subjectInd)) {
                          mark.setText("");
                          JOptionPane.showMessageDialog(null, "Update was successful");

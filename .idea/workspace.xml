@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d1b2e95-d97a-42cc-a40d-8ffc7d4b4ade" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Controller/Students/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Controller/Students/StudentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Controller/Students/StudentHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Controller/Students/StudentHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Controller/Teachers/TeacherHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Controller/Teachers/TeacherHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Controller/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Controller/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Katikamu.sql" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Katikamu.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Models/Students/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Models/Students/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Models/Students/StudentTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Models/Students/StudentTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Models/Teachers/FilterStudentsBySubjectTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Models/Teachers/FilterStudentsBySubjectTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Students/StudentDashView.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Students/StudentDashView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Students/StudentLoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Students/StudentLoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Teachers/AddResultsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Teachers/AddResultsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Teachers/AddStudentDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Teachers/AddStudentDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Teachers/AddTimetableData.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Teachers/AddTimetableData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Teachers/FilterStudents.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Teachers/FilterStudents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Teachers/StudentSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Teachers/StudentSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Teachers/TeacherDashView.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Teachers/TeacherDashView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Teachers/TeacherLoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Teachers/TeacherLoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/katikamu/src/Views/Template.java" beforeDir="false" afterPath="$PROJECT_DIR$/katikamu/src/Views/Template.java" afterDir="false" />
-    </list>
+    <list default="true" id="8d1b2e95-d97a-42cc-a40d-8ffc7d4b4ade" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +42,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Views.Students" />
       <recent name="" />
       <recent name="Views.Teachers" />
       <recent name="Models.Students" />
@@ -193,22 +175,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="588" y="187" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1642153131137" />
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1642157450259">
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom" timestamp="1642160836765">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1642157450259" />
-    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1642157450257">
+    <state width="1557" height="221" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1642160836765" />
+    <state width="1557" height="221" key="GridCell.Tab.0.center" timestamp="1642160836765">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1642157450257" />
-    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1642157450256">
+    <state width="1557" height="221" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1642160836765" />
+    <state width="1557" height="221" key="GridCell.Tab.0.left" timestamp="1642160836765">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1642157450256" />
-    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1642157450258">
+    <state width="1557" height="221" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1642160836765" />
+    <state width="1557" height="221" key="GridCell.Tab.0.right" timestamp="1642160836765">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1642157450258" />
+    <state width="1557" height="221" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1642160836765" />
     <state x="303" y="14" key="SettingsEditor" timestamp="1642153145525">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -229,16 +211,5 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1640882546747" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controller/Teachers/TeacherHomeController.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

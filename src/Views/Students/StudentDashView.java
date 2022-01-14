@@ -1,5 +1,6 @@
 package Views.Students;
 
+import Views.Teachers.ResetPassword;
 import Views.Template;
 import Views.WelcomeView;
 
@@ -16,6 +17,7 @@ public class StudentDashView implements ActionListener {
     JButton viewTimetable =new JButton("View Timetable");
     JButton logout =new JButton("logout");
     JLabel welcome=new JLabel("Welcome "+Name);
+    JButton reset =new JButton("Reset Password");
 
     /**
      * StudentDashView Constructor
@@ -30,12 +32,15 @@ public class StudentDashView implements ActionListener {
         frame.add(logout);
         viewTimetable.setBounds(160,130,300,30);
         viewResults.setBounds(160,170,300,30);
+        reset.setBounds(160,300,300,30);
         viewTimetable.setFocusable(false);
         viewResults.setFocusable(false);
         viewTimetable.addActionListener(this);
         viewResults.addActionListener(this);
+        reset.addActionListener(this);
         frame.add(viewResults);
         frame.add(viewTimetable);
+        frame.add(reset);
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
@@ -58,6 +63,10 @@ public class StudentDashView implements ActionListener {
             STUDENT_ID=0;
             frame.dispose();
             new WelcomeView();
+        }
+        if(e.getSource()==reset){
+            frame.dispose();
+            new ResetPassword();
         }
     }
 }
