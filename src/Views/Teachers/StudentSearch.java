@@ -35,8 +35,7 @@ private JPanel contentPane;
 	private JScrollPane scrollPane;
 	private JTable table;
         private JButton btnAddStudent;
-        private JButton btnFilterStudents;
-
+        
 	private StudentDAO studentDAO;
        
         
@@ -156,10 +155,29 @@ private JPanel contentPane;
 		table = new JTable();
 		scrollPane.setViewportView(table);
                 
-                // Add Student Button
+                 // Add Student Button
                 
                 JPanel panel_1 = new JPanel();
                 contentPane.add(panel_1, BorderLayout.SOUTH);
+                
+                
+                btnAddStudent = new JButton("Register Student");
+                panel.add(btnAddStudent);
+                
+                btnAddStudent.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event) {
+                      //StudentSearch studentSearch = new StudentSearch();
+                            // create Dialog
+                            AddStudentDialog dialog = new AddStudentDialog(true);
+                            
+                            // show dialog
+                            dialog.setVisible(true);    
+                    } 
+                });
+              
+                panel_1.add(btnAddStudent);  
+    
+    
 
     }
     
